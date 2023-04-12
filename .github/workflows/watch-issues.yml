@@ -1,5 +1,5 @@
 name: Issue watcher
-on: issues
+on: [issues, workflow_dispatch]
 jobs:
   issue-opened:
     runs-on: macos-latest
