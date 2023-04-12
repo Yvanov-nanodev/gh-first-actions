@@ -5,7 +5,7 @@ jobs:
     runs-on: macos-latest
     defaults:
       run: 
-        working_directory: react-project
+        working-directory: react-project
     steps:
       - name: Get code
         uses: actions/checkout@v3
