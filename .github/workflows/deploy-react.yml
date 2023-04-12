@@ -1,7 +1,7 @@
 name: Deploy react project
 on: push
 jobs: 
-  test-react-project:
+  test:
     runs-on: macos-latest
     defaults:
       run: 
@@ -17,7 +17,8 @@ jobs:
         run: npm ci
       - name: Run tests
         run: npm run test
-  deploy-react-projects:
+  deploy:
+    needs: test
     runs-on: macos-latest
     defaults:
       run: 
