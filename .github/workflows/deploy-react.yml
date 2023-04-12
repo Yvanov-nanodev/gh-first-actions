@@ -8,14 +8,18 @@ jobs:
         working-directory: react-project
     steps:
       - name: Get code
+        if: steps.filter.outputs.react-project == 'true'
         uses: actions/checkout@v3
       - name: Install node js
+        if: steps.filter.outputs.react-project == 'true'
         uses: actions/setup-node@v3
         with:
           node-version: 18
       - name: Install dependencies
+        if: steps.filter.outputs.react-project == 'true'
         run: npm ci
       - name: Run tests
+        if: steps.filter.outputs.react-project == 'true'
         run: npm run test
   deploy:
     needs: test
@@ -25,14 +29,19 @@ jobs:
         working-directory: react-project
     steps:
       - name: Get code
+        if: steps.filter.outputs.react-project == 'true'
         uses: actions/checkout@v3
       - name: Install node js
+        if: steps.filter.outputs.react-project == 'true'
         uses: actions/setup-node@v3
         with:
           node-version: 18
       - name: Install dependencies
+        if: steps.filter.outputs.react-project == 'true'
         run: npm ci
       - name: Build project
+        if: steps.filter.outputs.react-project == 'true'
         run: npm run build
       - name: Deploy
+        if: steps.filter.outputs.react-project == 'true'
         run: echo "Deploying"
