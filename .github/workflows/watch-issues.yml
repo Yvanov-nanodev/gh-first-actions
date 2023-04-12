@@ -1,6 +1,6 @@
 name: Issue watcher
-on: issue
-jobs: 
+on: issues
+jobs:
   issue-opened:
     runs-on: macos-latest
     steps:
