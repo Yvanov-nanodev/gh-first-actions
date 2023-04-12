@@ -1,0 +1,8 @@
+name: Issue watcher
+on: issue
+jobs: 
+  issue-opened:
+    runs-on: macos-latest
+    steps:
+      - name: Display details
+        run: echo "${{ toJSON(github.event.issue) }}"
