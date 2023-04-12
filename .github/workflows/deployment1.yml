@@ -1,0 +1,20 @@
+name: Deployment Exercise 1
+on: push
+jobs: 
+  deploy:
+    runs-on: macos-latest
+    defaults:
+      run: 
+        working-directory: react-project
+    steps:
+      - name: Get Code
+        uses: actions/checkout@v3
+      - name: Install dependencies
+        run: npm ci
+      - name: Lint
+        run: npm run lint
+      - name: Text code
+        run: npm run test
+      - name: Build code
+        run: npm run build
+      - name: echo "Deploying..."
