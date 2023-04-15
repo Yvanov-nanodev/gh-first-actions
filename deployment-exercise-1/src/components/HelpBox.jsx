@@ -2,7 +2,6 @@ import { string } from 'prop-types';
 
 import './HelpBox.css';
 
-// important comment
 function HelpBox({ title, text }) {
   return (
     <article className="help-box">
