@@ -2,7 +2,7 @@ name: Deployment Exercise 1
 on: 
   push: 
     paths: 
-      - deployment-exercise-1
+      - deployment-exercise-1/**
   workflow_dispatch:
 jobs: 
   deploy:

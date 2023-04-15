@@ -2,7 +2,7 @@ name: Deploy react project
 on: 
   push: 
     paths: 
-      - react-project
+      - react-project/**
   workflow_dispatch:
 jobs: 
   test:

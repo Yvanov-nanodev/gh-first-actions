@@ -1,7 +1,8 @@
 name: Deployment exercise 1
 on:
   push:
-   paths: deployment-exercise-1
+   paths: 
+    - deployment-exercise-1/**
   workflow_dispatch:
 jobs:
   lint:
