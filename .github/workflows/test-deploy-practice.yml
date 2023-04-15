@@ -70,6 +70,8 @@ jobs:
     steps:
       - name: Download artifacts
         uses: actions/download-artifact@v3
+        with:
+          name: dist-files
       - name: Display files
         run: ls -l
       - name: Deploy
