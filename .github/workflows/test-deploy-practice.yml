@@ -45,6 +45,8 @@ jobs:
         working-directory: deployment-exercise-1
     needs: test
     runs-on: macos-latest
+    outputs: 
+      script-file: ${{ steps.publish.output.script-file }}
     steps:
       - name: Get code
         uses: actions/checkout@v3
@@ -56,6 +58,9 @@ jobs:
         run: |
           npm run build
           ls
+      - name: Publish js file name
+        id: publish
+        run: find dist/assets/*.js -type f -execdir echo 'script-file={}' >> $GITHUB_OUTPUT ';'
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with: 
@@ -71,6 +76,8 @@ jobs:
           name: dist-files
       - name: Display files
         run: ls -l
+      - name: output file name
+        run: echo "${{ needs.build.output.script-file }}"
       - name: Deploy
         run: echo "Deploying..."
 
