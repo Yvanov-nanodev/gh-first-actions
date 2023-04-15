@@ -62,9 +62,6 @@ jobs:
           name: dist-files
           path: deployment-exercise-1/dist
   deploy:
-    defaults:
-      run: 
-        working-directory: deployment-exercise-1
     needs: build
     runs-on: macos-latest
     steps:
