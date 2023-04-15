@@ -1,5 +1,9 @@
 name: Deploy react project
-on: [push, workflow_dispatch]
+on: 
+  push: 
+    paths: 
+      - react-project
+  workflow_dispatch:
 jobs: 
   test:
     runs-on: macos-latest

@@ -3,6 +3,11 @@ on:
   pull_request:
     types:
       - opened
+  push:
+    branches:
+      - main
+    paths: 
+      - demo-project-2
   workflow_dispatch:
 jobs:
   deploy:

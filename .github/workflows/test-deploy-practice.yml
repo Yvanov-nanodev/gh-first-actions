@@ -1,10 +1,14 @@
 name: Deployment exercise 1
-on: push
+on:
+  push:
+    paths: 
+      - deployment-exercise-1
+  workflow_dispatch:
 jobs:
   lint:
     defaults:
       run: 
-        working-directory: deployment-exercide-1
+        working-directory: deployment-exercise-1
     runs-on: macos-latest
     steps:
       - name: Get code
@@ -20,7 +24,7 @@ jobs:
   test:
     defaults:
       run: 
-        working-directory: deployment-exercide-1
+        working-directory: deployment-exercise-1
     runs-on: macos-latest
     needs: [lint]
     steps:
@@ -37,7 +41,7 @@ jobs:
   deploy:
     defaults:
       run: 
-        working-directory: deployment-exercide-1
+        working-directory: deployment-exercise-1
     needs: test
     runs-on: macos-latest
     steps:
