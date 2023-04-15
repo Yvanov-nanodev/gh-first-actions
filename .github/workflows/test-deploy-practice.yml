@@ -53,7 +53,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Build the project
-        run: npm run build
+        run: |
+          npm run build
+          ls
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with: 
@@ -66,5 +68,9 @@ jobs:
     needs: build
     runs-on: macos-latest
     steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v3
+        run: ls -l
       - name: Deploy
         run: echo "Deploying..."
+
