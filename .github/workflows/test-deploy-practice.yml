@@ -1,6 +1,7 @@
 name: Deployment exercise 1
 on:
   push:
+   paths: deployment-exercise-1
   workflow_dispatch:
 jobs:
   lint:
@@ -19,6 +20,7 @@ jobs:
         run: npm ci
       - name: Lint the code
         run: npm run lint
+        
   test:
     defaults:
       run: 
